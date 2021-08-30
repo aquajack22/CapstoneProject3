@@ -14,7 +14,7 @@ pipeline {
  stages {
       stage('checkout') {
            steps {             
-		   git branch: main, url: 'https://github.com/aquajack22/CapstoneProject3.git'            
+		   git branch: 'main', url: 'https://github.com/aquajack22/CapstoneProject3.git'            
           	}
         }
 
