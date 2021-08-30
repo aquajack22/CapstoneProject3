@@ -50,8 +50,8 @@ pipeline {
             }
            steps {              
                 sh 'docker build -t ${containerName}:${tag} .' 
-                sh 'docker tag ${containerName} ${name}:${tag}'
-              //sh 'docker tag ${containerName} ${name}:$BUILD_NUMBER'
+              //sh 'docker tag ${containerName} ${name}:${tag}'
+                sh 'docker tag ${containerName} ${name}:$BUILD_NUMBER'
                
           }
         }
@@ -64,8 +64,8 @@ pipeline {
             }
             steps {
 		withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-		  sh  'docker push ${name}:${tag}'
-		//sh  'docker push ${name}:$BUILD_NUMBER' 
+		  //sh  'docker push ${name}:${tag}'
+		  sh  'docker push ${name}:$BUILD_NUMBER' 
         	}                  
           }
         }
@@ -83,7 +83,7 @@ pipeline {
     }
    post {
         success {
-            sh "docker rmi -f ${registry}:${tag}"
+            //sh "docker rmi -f ${registry}:${tag}"
             sh "docker rmi -f ${registry}:$BUILD_NUMBER"
         }
         failure {
