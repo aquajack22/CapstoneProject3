@@ -31,8 +31,8 @@ pipeline {
            steps {
               
                 sh 'docker build -t capstone3:latest .' 
-               // sh 'docker tag capstone3 aquajack22/capstone3:latest'
-                sh 'docker tag capstone3 aquajack22/capstone3:$BUILD_NUMBER'
+                sh 'docker tag capstone3 aquajack22/capstone3:latest'
+               // sh 'docker tag capstone3 aquajack22/capstone3:$BUILD_NUMBER'
                
           }
         }
@@ -41,8 +41,8 @@ pipeline {
           
             steps {
         withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-        //  sh  'docker push aquajack22/capstone3:latest'
-          sh  'docker push aquajack22/capstone3:$BUILD_NUMBER' 
+          sh  'docker push aquajack22/capstone3:latest'
+        //  sh  'docker push aquajack22/capstone3:$BUILD_NUMBER' 
         }
                   
           }
