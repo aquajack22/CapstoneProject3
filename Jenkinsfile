@@ -1,8 +1,6 @@
 pipeline {  
  agent any
- environment {
-	repo = 'https://github.com/aquajack22/CapstoneProject3.git'
-	gitbranch = 'main'
+ environment {		
         name = 'aquajack22/capstone3'
         tag = 'latest'       
         containerName = 'aetna'
@@ -16,7 +14,7 @@ pipeline {
  stages {
       stage('checkout') {
            steps {             
-		   git branch: ${gitbranch}, url: ${repo}            
+		   git branch: main, url: 'https://github.com/aquajack22/CapstoneProject3.git'            
           	}
         }
 
