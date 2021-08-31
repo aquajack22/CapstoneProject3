@@ -5,7 +5,7 @@ pipeline {
         tag = 'latest'       
         containerName = 'aetna'
 	deploy = false
-	registry = 'registry.hub.docker.com/repository/docker/aquajack22/capstone3'
+	registry = 'aquajack22/capstone3'
     }
   tools
     {
@@ -81,8 +81,8 @@ pipeline {
     }
    post {
         success {
-            sh "docker rmi -f ${registry}:${tag}"
-            //sh "docker rmi -f ${registry}:$BUILD_NUMBER"
+            sh "docker rmi -f ${name}:${tag}"
+            //sh "docker rmi -f ${name}:$BUILD_NUMBER"
         }
         failure {
             sh "docker rmi ${name}:${tag}"
