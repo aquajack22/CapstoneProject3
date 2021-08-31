@@ -5,7 +5,7 @@ pipeline {
         tag = 'latest'       
         containerName = 'aetna'
 	deploy = false
-	registry = 'registry.hub.docker.com/aquajack22/capstone3'
+	registry = 'registry.hub.docker.com/repository/docker/aquajack22/capstone3'
     }
   tools
     {
