@@ -4,8 +4,7 @@ pipeline {
         name = 'aquajack22/capstone3'
         tag = 'latest'       
         containerName = 'aetna'
-	deploy = false
-	registry = 'aquajack22/capstone3'
+	deploy = false	
     }
   tools
     {
